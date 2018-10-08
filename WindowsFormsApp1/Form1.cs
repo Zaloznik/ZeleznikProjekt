@@ -45,10 +45,10 @@ namespace WindowsFormsApp1
                     reader.Read();
                     try
                     {
-                        //user = reader["username"].ToString();
+                        user = reader["username"].ToString();
                         MessageBox.Show("prijava uspesna");
                     }
-                    catch (InvalidOperationException)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Napačno uporabniško ime ali geslo.", "Neuspešna prijava!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
