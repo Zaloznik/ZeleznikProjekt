@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class prijavaForm : Form
     {
         public static string user = "";
-        public Form1()
+        public prijavaForm()
         {
             InitializeComponent();
             passTextBox.UseSystemPasswordChar = true;

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class prijavaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(prijavaForm));
             this.prijavaBtn = new System.Windows.Forms.Button();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passTextBox = new System.Windows.Forms.TextBox();
@@ -100,7 +101,7 @@
             this.pokaziGesloCheckBox.UseVisualStyleBackColor = true;
             this.pokaziGesloCheckBox.CheckedChanged += new System.EventHandler(this.pokaziGesloCheckBox_CheckedChanged);
             // 
-            // Form1
+            // prijavaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,8 +113,9 @@
             this.Controls.Add(this.passTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.prijavaBtn);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "prijavaForm";
+            this.Text = "Prijava";
             this.ResumeLayout(false);
             this.PerformLayout();
 
