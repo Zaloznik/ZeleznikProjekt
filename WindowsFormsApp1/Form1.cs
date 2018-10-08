@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            passTextBox.UseSystemPasswordChar = true;
         }
 
         private void prijavaBtn_Click(object sender, EventArgs e)
@@ -27,15 +28,7 @@ namespace WindowsFormsApp1
         private void runLogin()
         {
             string komanda = "SELECT username FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (pass ='" + passTextBox.Text + "'));";
-            /*   string selekt = "SELECT username, pass FROM uporabniki";
-               string mySQLConnectionString = "datasource=mysql6001.site4now.net;username=a41906_projekt;password=salabajzer123;database=uporabniki";
-
-               MySqlConnection con = new MySqlConnection(mySQLConnectionString);
-               MySqlCommand com = new MySqlCommand(selekt, con);
-
-               con.Open();
-               MySqlDataReader reader = com.ExecuteReader();*/
-
+            
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
                 conn.Open();
@@ -51,12 +44,31 @@ namespace WindowsFormsApp1
                     catch (Exception ex)
                     {
                         MessageBox.Show("Napačno uporabniško ime ali geslo.", "Neuspešna prijava!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        usernameTextBox.Text = "";
+                        passTextBox.Text = "";
                     }
                     com.Dispose();
                 }
                 conn.Close();
             }
 
+        }
+
+        private void pokaziGesloCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pokaziGesloCheckBox.Checked == true)
+            {
+                passTextBox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                passTextBox.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
