@@ -21,5 +21,11 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = prijavaForm.ime;
+            textBox2.Text = prijavaForm.priimek;
+        }
     }
 }
