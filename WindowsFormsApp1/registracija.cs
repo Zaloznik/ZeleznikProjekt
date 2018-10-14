@@ -109,5 +109,10 @@ namespace WindowsFormsApp1
                 conn.Close();
             }
         }
+
+        private void registracija_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

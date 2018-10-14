@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
                     reader.Read();
                     while (reader.Read())
                     {
-                        izbiraComboBox.Items.Add(reader["ime"].ToString());
+                        izbiraComboBox.Items.Add(reader["od"].ToString());
                     }
                     com.Dispose();
                 }
@@ -59,6 +59,13 @@ namespace WindowsFormsApp1
             izpisPoti izpisPoti = new izpisPoti();
             this.Hide();
             izpisPoti.Show();
+        }
+
+        private void ustvariPotBtn_Click(object sender, EventArgs e)
+        {
+            ustvariPot ustvaripot = new ustvariPot();
+            ustvaripot.Show();
+            this.Hide();
         }
     }
 }

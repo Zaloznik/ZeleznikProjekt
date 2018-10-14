@@ -37,6 +37,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.izpisZacetekTextBox = new System.Windows.Forms.TextBox();
+            this.izpisKonecTextBox = new System.Windows.Forms.TextBox();
+            this.izpisCasTextBox = new System.Windows.Forms.TextBox();
+            this.izpisOpisTextBox = new System.Windows.Forms.TextBox();
+            this.izpisStrosekTextBox = new System.Windows.Forms.TextBox();
+            this.izpisUporabnikTextBox = new System.Windows.Forms.TextBox();
+            this.izpisZnamkaTextBox = new System.Windows.Forms.TextBox();
+            this.izpisModelTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nazajBtn
@@ -97,7 +105,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(282, 74);
+            this.label6.Location = new System.Drawing.Point(409, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 6;
@@ -106,7 +114,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(282, 122);
+            this.label7.Location = new System.Drawing.Point(409, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 7;
@@ -115,17 +123,89 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(282, 167);
+            this.label8.Location = new System.Drawing.Point(409, 167);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "Model:";
+            // 
+            // izpisZacetekTextBox
+            // 
+            this.izpisZacetekTextBox.Location = new System.Drawing.Point(198, 71);
+            this.izpisZacetekTextBox.Name = "izpisZacetekTextBox";
+            this.izpisZacetekTextBox.ReadOnly = true;
+            this.izpisZacetekTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisZacetekTextBox.TabIndex = 9;
+            // 
+            // izpisKonecTextBox
+            // 
+            this.izpisKonecTextBox.Location = new System.Drawing.Point(198, 119);
+            this.izpisKonecTextBox.Name = "izpisKonecTextBox";
+            this.izpisKonecTextBox.ReadOnly = true;
+            this.izpisKonecTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisKonecTextBox.TabIndex = 10;
+            // 
+            // izpisCasTextBox
+            // 
+            this.izpisCasTextBox.Location = new System.Drawing.Point(198, 164);
+            this.izpisCasTextBox.Name = "izpisCasTextBox";
+            this.izpisCasTextBox.ReadOnly = true;
+            this.izpisCasTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisCasTextBox.TabIndex = 11;
+            // 
+            // izpisOpisTextBox
+            // 
+            this.izpisOpisTextBox.Location = new System.Drawing.Point(198, 221);
+            this.izpisOpisTextBox.Name = "izpisOpisTextBox";
+            this.izpisOpisTextBox.ReadOnly = true;
+            this.izpisOpisTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisOpisTextBox.TabIndex = 12;
+            // 
+            // izpisStrosekTextBox
+            // 
+            this.izpisStrosekTextBox.Location = new System.Drawing.Point(198, 277);
+            this.izpisStrosekTextBox.Name = "izpisStrosekTextBox";
+            this.izpisStrosekTextBox.ReadOnly = true;
+            this.izpisStrosekTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisStrosekTextBox.TabIndex = 13;
+            // 
+            // izpisUporabnikTextBox
+            // 
+            this.izpisUporabnikTextBox.Location = new System.Drawing.Point(503, 71);
+            this.izpisUporabnikTextBox.Name = "izpisUporabnikTextBox";
+            this.izpisUporabnikTextBox.ReadOnly = true;
+            this.izpisUporabnikTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisUporabnikTextBox.TabIndex = 14;
+            // 
+            // izpisZnamkaTextBox
+            // 
+            this.izpisZnamkaTextBox.Location = new System.Drawing.Point(503, 119);
+            this.izpisZnamkaTextBox.Name = "izpisZnamkaTextBox";
+            this.izpisZnamkaTextBox.ReadOnly = true;
+            this.izpisZnamkaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisZnamkaTextBox.TabIndex = 15;
+            // 
+            // izpisModelTextBox
+            // 
+            this.izpisModelTextBox.Location = new System.Drawing.Point(503, 164);
+            this.izpisModelTextBox.Name = "izpisModelTextBox";
+            this.izpisModelTextBox.ReadOnly = true;
+            this.izpisModelTextBox.Size = new System.Drawing.Size(100, 20);
+            this.izpisModelTextBox.TabIndex = 16;
             // 
             // izpisPoti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.izpisModelTextBox);
+            this.Controls.Add(this.izpisZnamkaTextBox);
+            this.Controls.Add(this.izpisUporabnikTextBox);
+            this.Controls.Add(this.izpisStrosekTextBox);
+            this.Controls.Add(this.izpisOpisTextBox);
+            this.Controls.Add(this.izpisCasTextBox);
+            this.Controls.Add(this.izpisKonecTextBox);
+            this.Controls.Add(this.izpisZacetekTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -154,5 +234,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox izpisZacetekTextBox;
+        private System.Windows.Forms.TextBox izpisKonecTextBox;
+        private System.Windows.Forms.TextBox izpisCasTextBox;
+        private System.Windows.Forms.TextBox izpisOpisTextBox;
+        private System.Windows.Forms.TextBox izpisStrosekTextBox;
+        private System.Windows.Forms.TextBox izpisUporabnikTextBox;
+        private System.Windows.Forms.TextBox izpisZnamkaTextBox;
+        private System.Windows.Forms.TextBox izpisModelTextBox;
     }
 }

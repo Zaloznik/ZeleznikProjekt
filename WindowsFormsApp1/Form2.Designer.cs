@@ -35,6 +35,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.izbiraComboBox = new System.Windows.Forms.ComboBox();
+            this.ustvariPotBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -98,11 +99,22 @@
             this.izbiraComboBox.TabIndex = 6;
             this.izbiraComboBox.SelectedIndexChanged += new System.EventHandler(this.izbiraComboBox_SelectedIndexChanged);
             // 
+            // ustvariPotBtn
+            // 
+            this.ustvariPotBtn.Location = new System.Drawing.Point(599, 195);
+            this.ustvariPotBtn.Name = "ustvariPotBtn";
+            this.ustvariPotBtn.Size = new System.Drawing.Size(75, 23);
+            this.ustvariPotBtn.TabIndex = 7;
+            this.ustvariPotBtn.Text = "Ustvari pot";
+            this.ustvariPotBtn.UseVisualStyleBackColor = true;
+            this.ustvariPotBtn.Click += new System.EventHandler(this.ustvariPotBtn_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 242);
+            this.Controls.Add(this.ustvariPotBtn);
             this.Controls.Add(this.izbiraComboBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
@@ -128,5 +140,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox izbiraComboBox;
+        private System.Windows.Forms.Button ustvariPotBtn;
     }
 }

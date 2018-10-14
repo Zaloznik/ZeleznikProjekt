@@ -312,6 +312,7 @@
             this.Controls.Add(this.regImeTextBox);
             this.Name = "registracija";
             this.Text = "registracija";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.registracija_FormClosing);
             this.Load += new System.EventHandler(this.registracija_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -103,6 +103,12 @@
     <Compile Include="registracija.Designer.cs">
       <DependentUpon>registracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="ustvariPot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ustvariPot.Designer.cs">
+      <DependentUpon>ustvariPot.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="registracija.resx">
       <DependentUpon>registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ustvariPot.resx">
+      <DependentUpon>ustvariPot.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
