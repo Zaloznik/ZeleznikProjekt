@@ -96,6 +96,7 @@
             this.izbiraComboBox.Name = "izbiraComboBox";
             this.izbiraComboBox.Size = new System.Drawing.Size(121, 21);
             this.izbiraComboBox.TabIndex = 6;
+            this.izbiraComboBox.SelectedIndexChanged += new System.EventHandler(this.izbiraComboBox_SelectedIndexChanged);
             // 
             // Form2
             // 
