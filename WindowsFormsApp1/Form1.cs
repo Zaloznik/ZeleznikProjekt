@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
 
         private void runLogin()
         {
-            string komanda = "SELECT username, ime, priimek FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (pass ='" + passTextBox.Text + "'));";
+            string komanda = "SELECT username, ime, priimek FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (password ='" + passTextBox.Text + "'));";
             
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
@@ -75,6 +75,13 @@ namespace WindowsFormsApp1
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            registracija register = new registracija();
+            register.Show();
+            this.Hide();
         }
     }
 }

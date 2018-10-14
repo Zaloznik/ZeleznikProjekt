@@ -36,11 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.pokaziGesloCheckBox = new System.Windows.Forms.CheckBox();
+            this.registerBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prijavaBtn
             // 
-            this.prijavaBtn.Location = new System.Drawing.Point(33, 184);
+            this.prijavaBtn.Location = new System.Drawing.Point(75, 183);
             this.prijavaBtn.Name = "prijavaBtn";
             this.prijavaBtn.Size = new System.Drawing.Size(100, 23);
             this.prijavaBtn.TabIndex = 0;
@@ -82,7 +83,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(156, 184);
+            this.cancelBtn.Location = new System.Drawing.Point(198, 183);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(100, 23);
             this.cancelBtn.TabIndex = 5;
@@ -101,11 +102,22 @@
             this.pokaziGesloCheckBox.UseVisualStyleBackColor = true;
             this.pokaziGesloCheckBox.CheckedChanged += new System.EventHandler(this.pokaziGesloCheckBox_CheckedChanged);
             // 
+            // registerBtn
+            // 
+            this.registerBtn.Location = new System.Drawing.Point(137, 212);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(100, 23);
+            this.registerBtn.TabIndex = 7;
+            this.registerBtn.Text = "Registracija";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
+            // 
             // prijavaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 262);
+            this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.pokaziGesloCheckBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.label2);
@@ -130,6 +142,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.CheckBox pokaziGesloCheckBox;
+        private System.Windows.Forms.Button registerBtn;
     }
 }
 
