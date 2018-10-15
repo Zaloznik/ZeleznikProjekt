@@ -33,7 +33,6 @@ namespace WindowsFormsApp1
                 using (MySqlCommand com = new MySqlCommand(komanda, conn))
                 {
                     MySqlDataReader reader = com.ExecuteReader();
-                    reader.Read();
                     while (reader.Read())
                     {
                         regZnamkaComboBox.Items.Add(reader["ime"].ToString());
@@ -100,7 +99,7 @@ namespace WindowsFormsApp1
                 using (MySqlCommand com = new MySqlCommand(komanda, conn))
                 {
                     MySqlDataReader reader = com.ExecuteReader();
-                    reader.Read();
+                    
                     while (reader.Read())
                     {
                         regModelComboBox.Items.Add(reader["ime"].ToString());

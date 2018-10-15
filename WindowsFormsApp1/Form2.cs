@@ -42,7 +42,6 @@ namespace WindowsFormsApp1
                 using (MySqlCommand com = new MySqlCommand(komanda, conn))
                 {
                     MySqlDataReader reader = com.ExecuteReader();
-                    reader.Read();
                     while (reader.Read())
                     {
                         izbiraComboBox.Items.Add(reader.GetString("od"));
