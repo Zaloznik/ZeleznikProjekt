@@ -54,14 +54,16 @@ namespace WindowsFormsApp1
 
             string model = regModelComboBox.SelectedItem.ToString();
 
-            string comanda = "INSERT INTO avtomobili (cena, letnik, moc, kubiki, prevozeni, poraba, model_id) VALUES ('" + cena + "','" + letnik + "', '" + moc + "', '" + kubiki + "', '"+ prevozeni +"', '"+ poraba +"', (SELECT id FROM modeli WHERE ime='"+ model +"'))";
+            string comanda = "INSERT INTO avtomobili (cena, letnik, moc, kubiki, prevozeni, poraba, model_id) VALUES ('" + cena + "','" + letnik + "', '" + moc + "', '" + kubiki + "', '"+ prevozeni +"', '"+ poraba +"', (SELECT id FROM modeli WHERE ime='"+ model + "')); SELECT last_insert_id();";
+
+            int avto_id;
 
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
                 conn.Open();
                 using (MySqlCommand com = new MySqlCommand(comanda, conn))
                 {
-                    com.ExecuteNonQuery();
+                    avto_id = Convert.ToInt32(com.ExecuteScalar());
                     com.Dispose();
                 }
                 conn.Close();
@@ -72,7 +74,7 @@ namespace WindowsFormsApp1
             string username = regUsernameTextBox.Text;
             string password = regPassTextBox.Text;
 
-            string komanda = "INSERT INTO uporabniki (ime, priimek, username, password, avtomobil_id) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', (SELECT id FROM avtomobili WHERE cena=" + cena + ")";
+            string komanda = "INSERT INTO uporabniki (ime, priimek, username, password, avtomobil_id) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', " + avto_id + ")";
 
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
