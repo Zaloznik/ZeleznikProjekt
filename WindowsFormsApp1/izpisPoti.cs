@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace WindowsFormsApp1
 {
     public partial class izpisPoti : Form
@@ -27,7 +28,7 @@ namespace WindowsFormsApp1
 
         private void izpisPoti_Load(object sender, EventArgs e)
         {
-            string komanda = "SELECT p.od, p.do, p.cas, p.opis, p.strosek, u.username, m.ime, z.ime FROM potip INNER JOIN uporabniki u ON u.id=p.uporabnik_id INNER JOIN avtomobili a ON a.id=u.avtomobil_id INNER JOIN modeli m ON m.id=a.model_id INNER JOIN znamke z ON z.id=m.znamka_id WHERE od = '"+ Form2.pot +"'";
+            string komanda = "SELECT p.od AS 'od', p.do AS 'do', p.cas AS 'cas', p.opis AS 'opis', p.strosek AS 'strosek', u.username AS 'username', m.ime AS 'model', z.ime AS 'znamka' FROM poti p INNER JOIN uporabniki u ON u.id=p.uporabnik_id INNER JOIN avtomobili a ON a.id=u.avtomobil_id INNER JOIN modeli m ON m.id=a.model_id INNER JOIN znamke z ON z.id=m.znamka_id WHERE od = '"+ Form2.pot +"'";
 
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
@@ -36,14 +37,14 @@ namespace WindowsFormsApp1
                 {
                     MySqlDataReader reader = com.ExecuteReader();
                     reader.Read();
-                        izpisCasTextBox.Text = reader["p.cas"].ToString();
-                        izpisKonecTextBox.Text = reader["p.do"].ToString();
-                        izpisModelTextBox.Text = reader["m.ime"].ToString();
-                        izpisOpisTextBox.Text = reader["p.opis"].ToString();
-                        izpisStrosekTextBox.Text = reader["p.strosek"].ToString();
-                        izpisUporabnikTextBox.Text = reader["u.username"].ToString();
-                        izpisZacetekTextBox.Text = reader["p.od"].ToString();
-                        izpisZnamkaTextBox.Text = reader["z.ime"].ToString();
+                        izpisCasTextBox.Text = reader["cas"].ToString();
+                        izpisKonecTextBox.Text = reader["do"].ToString();
+                        izpisModelTextBox.Text = reader["model"].ToString();
+                        izpisOpisTextBox.Text = reader["opis"].ToString();
+                        izpisStrosekTextBox.Text = reader["strosek"].ToString();
+                        izpisUporabnikTextBox.Text = reader["username"].ToString();
+                        izpisZacetekTextBox.Text = reader["od"].ToString();
+                        izpisZnamkaTextBox.Text = reader["znamka"].ToString();
                     
                     com.Dispose();
                 }
