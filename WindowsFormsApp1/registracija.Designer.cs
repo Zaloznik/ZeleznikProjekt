@@ -55,6 +55,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.regCenaTextBox = new System.Windows.Forms.TextBox();
+            this.nazajBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // regImeTextBox
@@ -278,11 +279,22 @@
             this.regCenaTextBox.Size = new System.Drawing.Size(100, 20);
             this.regCenaTextBox.TabIndex = 26;
             // 
+            // nazajBtn
+            // 
+            this.nazajBtn.Location = new System.Drawing.Point(34, 415);
+            this.nazajBtn.Name = "nazajBtn";
+            this.nazajBtn.Size = new System.Drawing.Size(75, 23);
+            this.nazajBtn.TabIndex = 27;
+            this.nazajBtn.Text = "Nazaj";
+            this.nazajBtn.UseVisualStyleBackColor = true;
+            this.nazajBtn.Click += new System.EventHandler(this.nazajBtn_Click);
+            // 
             // registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nazajBtn);
             this.Controls.Add(this.regCenaTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -348,5 +360,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox regCenaTextBox;
+        private System.Windows.Forms.Button nazajBtn;
     }
 }
