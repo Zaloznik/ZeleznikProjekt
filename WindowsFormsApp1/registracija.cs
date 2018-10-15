@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
             string username = regUsernameTextBox.Text;
             string password = regPassTextBox.Text;
 
-            string komanda = "INSERT INTO uporabniki (ime, priimek, username, geslo, avtomobil_id) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', (SELECT id FROM avtomobili WHERE cena=" + cena + ")";
+            string komanda = "INSERT INTO uporabniki (ime, priimek, username, password, avtomobil_id) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', (SELECT id FROM avtomobili WHERE cena=" + cena + ")";
 
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
@@ -89,6 +89,7 @@ namespace WindowsFormsApp1
 
         private void regZnamkaComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            regModelComboBox.Items.Clear();
             string znamka = regZnamkaComboBox.SelectedItem.ToString();
 
             string komanda = "SELECT m.ime FROM modeli m INNER JOIN znamke z ON z.id=m.znamka_id WHERE z.ime = '" + znamka + "' ";
