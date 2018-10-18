@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
         private void izberiPotComboBox()
         {
-            string komanda = "SELECT od FROM poti";
+            string komanda = "SELECT id FROM poti";
 
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {

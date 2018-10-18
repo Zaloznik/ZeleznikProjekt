@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
         public registracija()
         {
             InitializeComponent();
+            regPassTextBox.UseSystemPasswordChar = true;
+            regPonoviGesloTextBox.UseSystemPasswordChar = true;
         }
 
         private void registracija_Load(object sender, EventArgs e)
@@ -51,6 +53,7 @@ namespace WindowsFormsApp1
             int kubiki = Convert.ToInt32(regKubikiTextBox.Text);
             double prevozeni = Convert.ToDouble(regPrevozeniTextBox.Text);
             double poraba = Convert.ToDouble(regPorabaTextBox.Text);
+            int rank = 1;
 
             string model = regModelComboBox.SelectedItem.ToString();
 
@@ -61,38 +64,41 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    string comanda = "INSERT INTO avtomobili (cena, letnik, moc, kubiki, prevozeni, poraba, model_id) VALUES ('" + cena + "','" + letnik + "', '" + moc + "', '" + kubiki + "', '" + prevozeni + "', '" + poraba + "', (SELECT id FROM modeli WHERE ime='" + model + "')); SELECT last_insert_id();";
-
-                    int avto_id;
-
-                    using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
-                    {
-                        conn.Open();
-                        using (MySqlCommand com = new MySqlCommand(comanda, conn))
-                        {
-                            avto_id = Convert.ToInt32(com.ExecuteScalar());
-                            com.Dispose();
-                        }
-                        conn.Close();
-                    }
-
                     string ime = regImeTextBox.Text;
                     string priimek = regPriimekTextBox.Text;
                     string username = regUsernameTextBox.Text;
                     string password = regPassTextBox.Text;
 
-                    string komanda = "INSERT INTO uporabniki (ime, priimek, username, password, avtomobil_id) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', " + avto_id + ")";
+                    string komanda = "INSERT INTO uporabniki (ime, priimek, username, password, rank) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', " + rank + "); SELECT last_insert_id();";
+
+                    int uporabnik_id;
 
                     using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
                     {
                         conn.Open();
                         using (MySqlCommand com = new MySqlCommand(komanda, conn))
                         {
-                            com.ExecuteNonQuery();
+                            uporabnik_id = Convert.ToInt32(com.ExecuteScalar());
                             com.Dispose();
                         }
                         conn.Close();
                     }
+
+
+                    string comanda = "INSERT INTO avtomobili (cena, letnik, moc, kubiki, prevozeni, poraba, model_id, uporabnik_id) VALUES ('" + cena + "','" + letnik + "', '" + moc + "', '" + kubiki + "', '" + prevozeni + "', '" + poraba + "', (SELECT id FROM modeli WHERE ime='" + model + "'));";
+
+
+                    using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
+                    {
+                        conn.Open();
+                        using (MySqlCommand com = new MySqlCommand(comanda, conn))
+                        {
+                            com.Dispose();
+                        }
+                        conn.Close();
+                    }
+
+                    
                     MessageBox.Show("Uporabnik vnešen.");
                     regCenaTextBox.Clear();
                     regImeTextBox.Clear();
