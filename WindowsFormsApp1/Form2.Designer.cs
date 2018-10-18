@@ -36,6 +36,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.izbiraComboBox = new System.Windows.Forms.ComboBox();
             this.ustvariPotBtn = new System.Windows.Forms.Button();
+            this.izbrisiPotButton = new System.Windows.Forms.Button();
+            this.odjavaButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -109,11 +111,33 @@
             this.ustvariPotBtn.UseVisualStyleBackColor = true;
             this.ustvariPotBtn.Click += new System.EventHandler(this.ustvariPotBtn_Click);
             // 
+            // izbrisiPotButton
+            // 
+            this.izbrisiPotButton.Location = new System.Drawing.Point(496, 195);
+            this.izbrisiPotButton.Name = "izbrisiPotButton";
+            this.izbrisiPotButton.Size = new System.Drawing.Size(75, 23);
+            this.izbrisiPotButton.TabIndex = 8;
+            this.izbrisiPotButton.Text = "Izbrisi pot";
+            this.izbrisiPotButton.UseVisualStyleBackColor = true;
+            this.izbrisiPotButton.Visible = false;
+            // 
+            // odjavaButton
+            // 
+            this.odjavaButton.Location = new System.Drawing.Point(1, 218);
+            this.odjavaButton.Name = "odjavaButton";
+            this.odjavaButton.Size = new System.Drawing.Size(75, 23);
+            this.odjavaButton.TabIndex = 9;
+            this.odjavaButton.Text = "Odjava";
+            this.odjavaButton.UseVisualStyleBackColor = true;
+            this.odjavaButton.Click += new System.EventHandler(this.odjavaButton_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 242);
+            this.Controls.Add(this.odjavaButton);
+            this.Controls.Add(this.izbrisiPotButton);
             this.Controls.Add(this.ustvariPotBtn);
             this.Controls.Add(this.izbiraComboBox);
             this.Controls.Add(this.label4);
@@ -141,5 +165,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox izbiraComboBox;
         private System.Windows.Forms.Button ustvariPotBtn;
+        private System.Windows.Forms.Button izbrisiPotButton;
+        private System.Windows.Forms.Button odjavaButton;
     }
 }

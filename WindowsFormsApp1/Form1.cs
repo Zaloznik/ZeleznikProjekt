@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         public static string user = "";
         public static string ime = "";
         public static string priimek = "";
+        public static int rank = 1;
         public prijavaForm()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace WindowsFormsApp1
 
         private void runLogin()
         {
-            string komanda = "SELECT username, ime, priimek FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (password ='" + passTextBox.Text + "'));";
+            string komanda = "SELECT username, ime, priimek, rank FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (password ='" + passTextBox.Text + "'));";
             
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
@@ -43,6 +44,7 @@ namespace WindowsFormsApp1
                         user = reader["username"].ToString();
                         ime = reader["ime"].ToString();
                         priimek = reader["priimek"].ToString();
+                        rank = Convert.ToInt32(reader["rank"].ToString());
                         Form2 form2 = new Form2();
                         this.Hide();
                         form2.Show();

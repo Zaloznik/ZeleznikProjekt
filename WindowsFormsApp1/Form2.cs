@@ -30,6 +30,14 @@ namespace WindowsFormsApp1
             textBox1.Text = prijavaForm.ime;
             textBox2.Text = prijavaForm.priimek;
             izberiPotComboBox();
+            if(prijavaForm.rank == 10)
+            {
+                izbrisiPotButton.Visible = true;
+            }
+            else
+            {
+                izbrisiPotButton.Visible = false;
+            }
         }
 
         private void izberiPotComboBox()
@@ -65,6 +73,25 @@ namespace WindowsFormsApp1
             ustvariPot ustvaripot = new ustvariPot();
             ustvaripot.Show();
             this.Hide();
+        }
+
+        private void odjavaButton_Click(object sender, EventArgs e)
+        {
+            string message = "Ali ste prepricani da se zelite odjaviti?";
+            string naslov = "Odjava!";
+
+            var result = MessageBox.Show(message, naslov, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Odjava uspešna.", "Odjava!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                prijavaForm prijavaForm = new prijavaForm();
+                this.Hide();
+                prijavaForm.Show();
+            }
+            else
+            {
+
+            }
         }
     }
 }
