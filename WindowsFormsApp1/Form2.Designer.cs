@@ -40,6 +40,7 @@
             this.odjavaButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.izbira2ComboBox = new System.Windows.Forms.ComboBox();
+            this.izpisiPotBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -150,11 +151,22 @@
             this.izbira2ComboBox.Size = new System.Drawing.Size(121, 21);
             this.izbira2ComboBox.TabIndex = 11;
             // 
+            // izpisiPotBtn
+            // 
+            this.izpisiPotBtn.Location = new System.Drawing.Point(189, 195);
+            this.izpisiPotBtn.Name = "izpisiPotBtn";
+            this.izpisiPotBtn.Size = new System.Drawing.Size(75, 23);
+            this.izpisiPotBtn.TabIndex = 12;
+            this.izpisiPotBtn.Text = "Izpisi pot";
+            this.izpisiPotBtn.UseVisualStyleBackColor = true;
+            this.izpisiPotBtn.Click += new System.EventHandler(this.izpisiPotBtn_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 242);
+            this.Controls.Add(this.izpisiPotBtn);
             this.Controls.Add(this.izbira2ComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.odjavaButton);
@@ -190,5 +202,6 @@
         private System.Windows.Forms.Button odjavaButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox izbira2ComboBox;
+        private System.Windows.Forms.Button izpisiPotBtn;
     }
 }

@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     public partial class Form2 : Form
     {
         public static string pot;
+        public static string potv;
 
         public Form2()
         {
@@ -60,14 +61,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void izbiraComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            pot = izbiraComboBox.SelectedItem.ToString();
-            izpisPoti izpisPoti = new izpisPoti();
-            this.Hide();
-            izpisPoti.Show();
-        }
-
         private void ustvariPotBtn_Click(object sender, EventArgs e)
         {
             ustvariPot ustvaripot = new ustvariPot();
@@ -91,6 +84,37 @@ namespace WindowsFormsApp1
             else
             {
 
+            }
+        }
+
+        private void izpisiPotBtn_Click(object sender, EventArgs e)
+        {
+            potv = izbira2ComboBox.SelectedItem.ToString();
+            izpisPoti izpisPoti = new izpisPoti();
+            this.Hide();
+            izpisPoti.Show();
+        }
+
+        private void izbiraComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            izbira2ComboBox.Items.Clear();
+            pot = izbiraComboBox.SelectedItem.ToString();
+
+            string komanda = "SELECT k.ime AS ime FROM kraji k1 INNER JOIN zacetnikraji zk ON k1.id=zk.kraj_id INNER JOIN poti p ON p.zacetniKraj=zk.id INNER JOIN koncnikraji kk ON kk.id=p.koncniKraj INNER JOIN kraji k ON kk.kraj_id=k.id WHERE (zk.kraj_id=(SELECT k2.id from kraji k2 WHERE (k2.ime='"+pot+"')))";
+
+            using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
+            {
+                conn.Open();
+                using (MySqlCommand com = new MySqlCommand(komanda, conn))
+                {
+                    MySqlDataReader reader = com.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        izbira2ComboBox.Items.Add(reader.GetString("ime"));
+                    }
+                    com.Dispose();
+                }
+                conn.Close();
             }
         }
     }
