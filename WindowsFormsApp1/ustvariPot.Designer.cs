@@ -32,14 +32,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.zacetekTextBox = new System.Windows.Forms.TextBox();
-            this.konecTextBox = new System.Windows.Forms.TextBox();
             this.casTextBox = new System.Windows.Forms.TextBox();
             this.opisTextBox = new System.Windows.Forms.TextBox();
-            this.strosekTextBox = new System.Windows.Forms.TextBox();
             this.ustvariPotBtn = new System.Windows.Forms.Button();
             this.nazajBtn = new System.Windows.Forms.Button();
+            this.zacetniKrajComboBox = new System.Windows.Forms.ComboBox();
+            this.koncniKrajComboBox = new System.Windows.Forms.ComboBox();
+            this.krajButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -78,29 +77,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Opis:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 185);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Strošek:";
-            // 
-            // zacetekTextBox
-            // 
-            this.zacetekTextBox.Location = new System.Drawing.Point(158, 32);
-            this.zacetekTextBox.Name = "zacetekTextBox";
-            this.zacetekTextBox.Size = new System.Drawing.Size(100, 20);
-            this.zacetekTextBox.TabIndex = 5;
-            // 
-            // konecTextBox
-            // 
-            this.konecTextBox.Location = new System.Drawing.Point(158, 64);
-            this.konecTextBox.Name = "konecTextBox";
-            this.konecTextBox.Size = new System.Drawing.Size(100, 20);
-            this.konecTextBox.TabIndex = 6;
-            // 
             // casTextBox
             // 
             this.casTextBox.Location = new System.Drawing.Point(158, 105);
@@ -114,13 +90,6 @@
             this.opisTextBox.Name = "opisTextBox";
             this.opisTextBox.Size = new System.Drawing.Size(100, 20);
             this.opisTextBox.TabIndex = 8;
-            // 
-            // strosekTextBox
-            // 
-            this.strosekTextBox.Location = new System.Drawing.Point(158, 182);
-            this.strosekTextBox.Name = "strosekTextBox";
-            this.strosekTextBox.Size = new System.Drawing.Size(100, 20);
-            this.strosekTextBox.TabIndex = 9;
             // 
             // ustvariPotBtn
             // 
@@ -142,19 +111,44 @@
             this.nazajBtn.UseVisualStyleBackColor = true;
             this.nazajBtn.Click += new System.EventHandler(this.nazajBtn_Click);
             // 
+            // zacetniKrajComboBox
+            // 
+            this.zacetniKrajComboBox.FormattingEnabled = true;
+            this.zacetniKrajComboBox.Location = new System.Drawing.Point(148, 32);
+            this.zacetniKrajComboBox.Name = "zacetniKrajComboBox";
+            this.zacetniKrajComboBox.Size = new System.Drawing.Size(121, 21);
+            this.zacetniKrajComboBox.TabIndex = 12;
+            // 
+            // koncniKrajComboBox
+            // 
+            this.koncniKrajComboBox.FormattingEnabled = true;
+            this.koncniKrajComboBox.Location = new System.Drawing.Point(148, 64);
+            this.koncniKrajComboBox.Name = "koncniKrajComboBox";
+            this.koncniKrajComboBox.Size = new System.Drawing.Size(121, 21);
+            this.koncniKrajComboBox.TabIndex = 13;
+            // 
+            // krajButton
+            // 
+            this.krajButton.Location = new System.Drawing.Point(294, 44);
+            this.krajButton.Name = "krajButton";
+            this.krajButton.Size = new System.Drawing.Size(86, 23);
+            this.krajButton.TabIndex = 14;
+            this.krajButton.Text = "Vnesi nov kraj";
+            this.krajButton.UseVisualStyleBackColor = true;
+            this.krajButton.Click += new System.EventHandler(this.krajButton_Click);
+            // 
             // ustvariPot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 306);
+            this.ClientSize = new System.Drawing.Size(383, 306);
+            this.Controls.Add(this.krajButton);
+            this.Controls.Add(this.koncniKrajComboBox);
+            this.Controls.Add(this.zacetniKrajComboBox);
             this.Controls.Add(this.nazajBtn);
             this.Controls.Add(this.ustvariPotBtn);
-            this.Controls.Add(this.strosekTextBox);
             this.Controls.Add(this.opisTextBox);
             this.Controls.Add(this.casTextBox);
-            this.Controls.Add(this.konecTextBox);
-            this.Controls.Add(this.zacetekTextBox);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -162,6 +156,7 @@
             this.Name = "ustvariPot";
             this.Text = "ustvariPot";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ustvariPot_FormClosing);
+            this.Load += new System.EventHandler(this.ustvariPot_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,13 +168,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox zacetekTextBox;
-        private System.Windows.Forms.TextBox konecTextBox;
         private System.Windows.Forms.TextBox casTextBox;
         private System.Windows.Forms.TextBox opisTextBox;
-        private System.Windows.Forms.TextBox strosekTextBox;
         private System.Windows.Forms.Button ustvariPotBtn;
         private System.Windows.Forms.Button nazajBtn;
+        private System.Windows.Forms.ComboBox zacetniKrajComboBox;
+        private System.Windows.Forms.ComboBox koncniKrajComboBox;
+        private System.Windows.Forms.Button krajButton;
     }
 }

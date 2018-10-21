@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
                     }
 
 
-                    string comanda = "INSERT INTO avtomobili (cena, letnik, moc, kubiki, prevozeni, poraba, model_id, uporabnik_id) VALUES ('" + cena + "','" + letnik + "', '" + moc + "', '" + kubiki + "', '" + prevozeni + "', '" + poraba + "', (SELECT id FROM modeli WHERE ime='" + model + "'));";
+                    string comanda = "INSERT INTO avtomobili (cena, letnik, moc, kubiki, prevozeni, poraba, model_id, uporabnik_id) VALUES ('" + cena + "','" + letnik + "', '" + moc + "', '" + kubiki + "', '" + prevozeni + "', '" + poraba + "', (SELECT id FROM modeli WHERE ime='" + model + "'), "+ uporabnik_id +");";
 
 
                     using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
@@ -93,6 +93,7 @@ namespace WindowsFormsApp1
                         conn.Open();
                         using (MySqlCommand com = new MySqlCommand(comanda, conn))
                         {
+                            com.ExecuteNonQuery();
                             com.Dispose();
                         }
                         conn.Close();

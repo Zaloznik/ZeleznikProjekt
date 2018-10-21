@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
 
         private void izberiPotComboBox()
         {
-            string komanda = "SELECT id FROM poti";
+            string komanda = "SELECT p.cas AS cas, p.opis AS opis, k.ime AS ime FROM poti p INNER JOIN zacetniKraji zk ON zk.id=p.zacetniKraj INNER JOIN kraji k ON k.id=zk.kraj_id";
 
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
                     MySqlDataReader reader = com.ExecuteReader();
                     while (reader.Read())
                     {
-                        izbiraComboBox.Items.Add(reader.GetString("od"));
+                        izbiraComboBox.Items.Add(reader.GetString("ime"));
                     }
                     com.Dispose();
                 }

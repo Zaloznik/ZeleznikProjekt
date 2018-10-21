@@ -53,9 +53,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.nazajBtn = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.regCenaTextBox = new System.Windows.Forms.TextBox();
-            this.nazajBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // regImeTextBox
@@ -232,18 +232,18 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(295, 194);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.Size = new System.Drawing.Size(54, 13);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Moč:";
+            this.label9.Text = "Moč (km):";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(295, 239);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.Size = new System.Drawing.Size(68, 13);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Kubiki:";
+            this.label10.Text = "Kubiki (ccm):";
             // 
             // label11
             // 
@@ -259,25 +259,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(544, 194);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.Size = new System.Drawing.Size(92, 13);
             this.label12.TabIndex = 24;
-            this.label12.Text = "Poraba:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(549, 239);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "Cena:";
-            // 
-            // regCenaTextBox
-            // 
-            this.regCenaTextBox.Location = new System.Drawing.Point(637, 236);
-            this.regCenaTextBox.Name = "regCenaTextBox";
-            this.regCenaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.regCenaTextBox.TabIndex = 26;
+            this.label12.Text = "Poraba (l/100km):";
             // 
             // nazajBtn
             // 
@@ -288,6 +272,22 @@
             this.nazajBtn.Text = "Nazaj";
             this.nazajBtn.UseVisualStyleBackColor = true;
             this.nazajBtn.Click += new System.EventHandler(this.nazajBtn_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(549, 239);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Cena (€):";
+            // 
+            // regCenaTextBox
+            // 
+            this.regCenaTextBox.Location = new System.Drawing.Point(637, 236);
+            this.regCenaTextBox.Name = "regCenaTextBox";
+            this.regCenaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.regCenaTextBox.TabIndex = 26;
             // 
             // registracija
             // 
@@ -358,8 +358,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button nazajBtn;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox regCenaTextBox;
-        private System.Windows.Forms.Button nazajBtn;
     }
 }

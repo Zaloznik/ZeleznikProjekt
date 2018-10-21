@@ -33,7 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.izpisKonecTextBox = new System.Windows.Forms.TextBox();
             this.izpisCasTextBox = new System.Windows.Forms.TextBox();
             this.izpisOpisTextBox = new System.Windows.Forms.TextBox();
-            this.izpisStrosekTextBox = new System.Windows.Forms.TextBox();
             this.izpisUporabnikTextBox = new System.Windows.Forms.TextBox();
             this.izpisZnamkaTextBox = new System.Windows.Forms.TextBox();
             this.izpisModelTextBox = new System.Windows.Forms.TextBox();
@@ -49,7 +47,7 @@
             // 
             // nazajBtn
             // 
-            this.nazajBtn.Location = new System.Drawing.Point(12, 415);
+            this.nazajBtn.Location = new System.Drawing.Point(12, 275);
             this.nazajBtn.Name = "nazajBtn";
             this.nazajBtn.Size = new System.Drawing.Size(75, 23);
             this.nazajBtn.TabIndex = 0;
@@ -80,9 +78,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(61, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(93, 13);
+            this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Čas potovanja (h):";
+            this.label3.Text = "Čas potovanja (min):";
             // 
             // label4
             // 
@@ -92,15 +90,6 @@
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Opis:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Strošek (EUR):";
             // 
             // label6
             // 
@@ -161,14 +150,6 @@
             this.izpisOpisTextBox.Size = new System.Drawing.Size(100, 20);
             this.izpisOpisTextBox.TabIndex = 12;
             // 
-            // izpisStrosekTextBox
-            // 
-            this.izpisStrosekTextBox.Location = new System.Drawing.Point(198, 277);
-            this.izpisStrosekTextBox.Name = "izpisStrosekTextBox";
-            this.izpisStrosekTextBox.ReadOnly = true;
-            this.izpisStrosekTextBox.Size = new System.Drawing.Size(100, 20);
-            this.izpisStrosekTextBox.TabIndex = 13;
-            // 
             // izpisUporabnikTextBox
             // 
             this.izpisUporabnikTextBox.Location = new System.Drawing.Point(503, 71);
@@ -197,11 +178,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(620, 312);
             this.Controls.Add(this.izpisModelTextBox);
             this.Controls.Add(this.izpisZnamkaTextBox);
             this.Controls.Add(this.izpisUporabnikTextBox);
-            this.Controls.Add(this.izpisStrosekTextBox);
             this.Controls.Add(this.izpisOpisTextBox);
             this.Controls.Add(this.izpisCasTextBox);
             this.Controls.Add(this.izpisKonecTextBox);
@@ -209,7 +189,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -230,7 +209,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -238,7 +216,6 @@
         private System.Windows.Forms.TextBox izpisKonecTextBox;
         private System.Windows.Forms.TextBox izpisCasTextBox;
         private System.Windows.Forms.TextBox izpisOpisTextBox;
-        private System.Windows.Forms.TextBox izpisStrosekTextBox;
         private System.Windows.Forms.TextBox izpisUporabnikTextBox;
         private System.Windows.Forms.TextBox izpisZnamkaTextBox;
         private System.Windows.Forms.TextBox izpisModelTextBox;

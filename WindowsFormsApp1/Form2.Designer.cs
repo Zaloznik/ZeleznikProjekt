@@ -38,6 +38,8 @@
             this.ustvariPotBtn = new System.Windows.Forms.Button();
             this.izbrisiPotButton = new System.Windows.Forms.Button();
             this.odjavaButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.izbira2ComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 90);
+            this.label4.Location = new System.Drawing.Point(30, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 5;
@@ -95,7 +97,7 @@
             // izbiraComboBox
             // 
             this.izbiraComboBox.FormattingEnabled = true;
-            this.izbiraComboBox.Location = new System.Drawing.Point(197, 135);
+            this.izbiraComboBox.Location = new System.Drawing.Point(143, 40);
             this.izbiraComboBox.Name = "izbiraComboBox";
             this.izbiraComboBox.Size = new System.Drawing.Size(121, 21);
             this.izbiraComboBox.TabIndex = 6;
@@ -131,11 +133,30 @@
             this.odjavaButton.UseVisualStyleBackColor = true;
             this.odjavaButton.Click += new System.EventHandler(this.odjavaButton_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Mesto zaklucka:";
+            // 
+            // izbira2ComboBox
+            // 
+            this.izbira2ComboBox.FormattingEnabled = true;
+            this.izbira2ComboBox.Location = new System.Drawing.Point(143, 88);
+            this.izbira2ComboBox.Name = "izbira2ComboBox";
+            this.izbira2ComboBox.Size = new System.Drawing.Size(121, 21);
+            this.izbira2ComboBox.TabIndex = 11;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 242);
+            this.Controls.Add(this.izbira2ComboBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.odjavaButton);
             this.Controls.Add(this.izbrisiPotButton);
             this.Controls.Add(this.ustvariPotBtn);
@@ -167,5 +188,7 @@
         private System.Windows.Forms.Button ustvariPotBtn;
         private System.Windows.Forms.Button izbrisiPotButton;
         private System.Windows.Forms.Button odjavaButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox izbira2ComboBox;
     }
 }

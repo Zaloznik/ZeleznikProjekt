@@ -89,6 +89,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="izbrisKraja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="izbrisKraja.Designer.cs">
+      <DependentUpon>izbrisKraja.cs</DependentUpon>
+    </Compile>
     <Compile Include="izpisPoti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +115,20 @@
     <Compile Include="ustvariPot.Designer.cs">
       <DependentUpon>ustvariPot.cs</DependentUpon>
     </Compile>
+    <Compile Include="vnesiKraj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesiKraj.Designer.cs">
+      <DependentUpon>vnesiKraj.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="izbrisKraja.resx">
+      <DependentUpon>izbrisKraja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="izpisPoti.resx">
       <DependentUpon>izpisPoti.cs</DependentUpon>
@@ -132,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ustvariPot.resx">
       <DependentUpon>ustvariPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesiKraj.resx">
+      <DependentUpon>vnesiKraj.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
