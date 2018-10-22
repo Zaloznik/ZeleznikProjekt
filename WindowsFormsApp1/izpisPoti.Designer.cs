@@ -206,6 +206,7 @@
             this.Controls.Add(this.nazajBtn);
             this.Name = "izpisPoti";
             this.Text = "izpisPoti";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.izpisPoti_FormClosing);
             this.Load += new System.EventHandler(this.izpisPoti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
