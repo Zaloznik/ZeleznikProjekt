@@ -43,6 +43,7 @@
             this.izpisUporabnikTextBox = new System.Windows.Forms.TextBox();
             this.izpisZnamkaTextBox = new System.Windows.Forms.TextBox();
             this.izpisModelTextBox = new System.Windows.Forms.TextBox();
+            this.posodobiPotBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nazajBtn
@@ -138,7 +139,6 @@
             // 
             this.izpisCasTextBox.Location = new System.Drawing.Point(198, 164);
             this.izpisCasTextBox.Name = "izpisCasTextBox";
-            this.izpisCasTextBox.ReadOnly = true;
             this.izpisCasTextBox.Size = new System.Drawing.Size(100, 20);
             this.izpisCasTextBox.TabIndex = 11;
             // 
@@ -146,7 +146,6 @@
             // 
             this.izpisOpisTextBox.Location = new System.Drawing.Point(198, 221);
             this.izpisOpisTextBox.Name = "izpisOpisTextBox";
-            this.izpisOpisTextBox.ReadOnly = true;
             this.izpisOpisTextBox.Size = new System.Drawing.Size(100, 20);
             this.izpisOpisTextBox.TabIndex = 12;
             // 
@@ -174,11 +173,22 @@
             this.izpisModelTextBox.Size = new System.Drawing.Size(100, 20);
             this.izpisModelTextBox.TabIndex = 16;
             // 
+            // posodobiPotBtn
+            // 
+            this.posodobiPotBtn.Location = new System.Drawing.Point(522, 277);
+            this.posodobiPotBtn.Name = "posodobiPotBtn";
+            this.posodobiPotBtn.Size = new System.Drawing.Size(86, 23);
+            this.posodobiPotBtn.TabIndex = 17;
+            this.posodobiPotBtn.Text = "Posodobi pot";
+            this.posodobiPotBtn.UseVisualStyleBackColor = true;
+            this.posodobiPotBtn.Click += new System.EventHandler(this.posodobiPotBtn_Click);
+            // 
             // izpisPoti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 312);
+            this.Controls.Add(this.posodobiPotBtn);
             this.Controls.Add(this.izpisModelTextBox);
             this.Controls.Add(this.izpisZnamkaTextBox);
             this.Controls.Add(this.izpisUporabnikTextBox);
@@ -219,5 +229,6 @@
         private System.Windows.Forms.TextBox izpisUporabnikTextBox;
         private System.Windows.Forms.TextBox izpisZnamkaTextBox;
         private System.Windows.Forms.TextBox izpisModelTextBox;
+        private System.Windows.Forms.Button posodobiPotBtn;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -30,7 +31,8 @@ namespace WindowsFormsApp1
 
         private void runLogin()
         {
-            string komanda = "SELECT username, ime, priimek, rank FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (password ='" + passTextBox.Text + "'));";
+            string geslo = GetMD5(passTextBox.Text);
+            string komanda = "SELECT username, ime, priimek, rank FROM uporabniki WHERE ((username= '" + usernameTextBox.Text + "') AND (password ='" + geslo + "'));";
             
             using (MySqlConnection conn = new MySqlConnection("datasource = mysql6001.site4now.net; username = a41906_projekt; password = salabajzer123; database = db_a41906_projekt; sslmode=none"))
             {
@@ -84,6 +86,19 @@ namespace WindowsFormsApp1
             registracija register = new registracija();
             register.Show();
             this.Hide();
+        }
+
+        public string GetMD5(string text)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+            byte[] result = md5.Hash;
+            StringBuilder str = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                str.Append(result[i].ToString("x2"));
+            }
+            return str.ToString();
         }
     }
 }

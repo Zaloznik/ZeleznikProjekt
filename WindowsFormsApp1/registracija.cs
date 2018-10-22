@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -67,7 +68,7 @@ namespace WindowsFormsApp1
                     string ime = regImeTextBox.Text;
                     string priimek = regPriimekTextBox.Text;
                     string username = regUsernameTextBox.Text;
-                    string password = regPassTextBox.Text;
+                    string password = GetMD5(regPassTextBox.Text);
 
                     string komanda = "INSERT INTO uporabniki (ime, priimek, username, password, rank) VALUES ('" + ime + "','" + priimek + "','" + username + "','" + password + "', " + rank + "); SELECT last_insert_id();";
 
@@ -161,6 +162,19 @@ namespace WindowsFormsApp1
             prijavaForm prijavaForm = new prijavaForm();
             this.Hide();
             prijavaForm.Show();
+        }
+
+        public string GetMD5(string text)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+            byte[] result = md5.Hash;
+            StringBuilder str = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                str.Append(result[i].ToString("x2"));
+            }
+            return str.ToString();
         }
     }
 }

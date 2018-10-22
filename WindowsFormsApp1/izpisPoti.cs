@@ -53,5 +53,10 @@ namespace WindowsFormsApp1
                 conn.Close();
             }
         }
+
+        private void posodobiPotBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
